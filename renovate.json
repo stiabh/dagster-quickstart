@@ -26,23 +26,10 @@
             "groupName": "Major"
         },
         {
-            "matchManagers": [
-                "python-version"
+            "matchDepNames": [
+                "python"
             ],
-            "matchUpdateTypes": [
-                "patch"
-            ],
-            "enabled": true
-        },
-        {
-            "matchManagers": [
-                "python-version"
-            ],
-            "matchUpdateTypes": [
-                "minor",
-                "major"
-            ],
-            "enabled": false
+            "allowedVersions": "<=3.12"
         }
     ],
     "customManagers": [
