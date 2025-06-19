@@ -1,0 +1,11 @@
+# python
+.venv/
+__pycache__/
+*.egg-info/
+
+# dev
+.env
+
+# dagster
+src/dagster_home/*
+!src/dagster_home/dagster.yaml

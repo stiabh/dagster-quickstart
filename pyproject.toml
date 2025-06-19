@@ -1,0 +1,107 @@
+[project]
+name = "wine_search"
+requires-python = "==3.12.*"
+version = "0.1.0"
+
+dependencies = [
+    "dagster==1.10.15",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+    "sqlfluff==3.4.0",
+    "shandy-sqlfmt[jinjafmt]==0.26.0",
+    "ruff==0.11.10",
+    "dagster-webserver==1.10.15",
+    "duckdb>=1.3.1",
+    "duckdb-engine>=0.17.0",
+]
+
+# setting a build system means uv will install the project as editable
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dagster_project"]
+
+[tool.dagster]
+module_name = "dagster_project.definitions"
+
+# Ruff config (https://docs.astral.sh/ruff/configuration/)
+[tool.ruff]
+line-length = 88 # default
+
+[tool.ruff.lint]
+# select determines which rules (https://docs.astral.sh/ruff/rules/)
+# to respect when linting
+select = [
+  "E4", # default (pycodestyle)
+  "E7", # default (pycodestyle)
+  "E9", # default (pycodestyle)
+  "F",  # default (Pyflakes)
+  "I",  # Isort
+]
+
+[tool.sqlfluff.core]
+dialect = "duckdb"
+
+# we are forced to set a templater, even though we don't use it
+# the templater is ignored to prevent errors like dbt_utils macros not being
+# recognized, and the dbt templater is slow and requires additional python modules
+templater = "jinja"
+ignore = "templating"
+
+exclude_rules =  [
+  # rules to comply with sqlfmt
+  "layout.indent",
+  "layout.cte_bracket",
+  "layout.select_targets",
+  "layout.spacing",
+  "layout.cte_newline",
+  "layout.keyword_newline",
+
+  # allow any column order
+  "structure.column_order",
+
+  # allows "level", "name", etc
+  "references.keywords",
+
+  # allow unnecessary column quoting
+  "references.quoting"
+]
+
+# default sqlfmt line length
+max_line_length = 88
+
+[tool.sqlfluff.rules.capitalisation.keywords]
+capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.capitalisation.identifiers]
+extended_capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.capitalisation.functions]
+extended_capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.capitalisation.literals]
+capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.capitalisation.types]
+extended_capitalisation_policy = "lower"
+
+[tool.sqlfluff.rules.convention.terminator]
+# required by sqlfmt
+multiline_newline = true
+
+[tool.sqlfluff.rules.aliasing.length]
+# encourage human readable aliases
+min_alias_length = 3
+
+[tool.sqlfluff.rules.convention.not_equal]
+# enforce c-style (!=) not equal
+preferred_not_equal_style = "c_style"
+
+[tool.sqlfluff.rules.convention.casting_style]
+# enforce postgresql style (::) type casting
+preferred_type_casting_style = "shorthand"

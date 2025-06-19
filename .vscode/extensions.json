@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "emeraldwalk.runonsave",
+        "dorzey.vscode-sqlfluff"
+    ]
+}
