@@ -26,6 +26,27 @@
             "groupName": "Major"
         },
         {
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "matchManagers": "pep621",
+            "groupName": "Python packages patch"
+        },
+        {
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "matchManagers": "pep621",
+            "groupName": "Python packages minor"
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "matchManagers": "pep621",
+            "groupName": "Python packages major"
+        },
+        {
             "matchDepNames": [
                 "python"
             ],
