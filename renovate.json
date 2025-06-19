@@ -1,6 +1,48 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":automergePatch"
+    ],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "groupName": "Patch dependencies"
+        },
+        {
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "groupName": "Minor dependencies"
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "groupName": "Major dependencies"
+        },
+        {
+            "matchDepNames": [
+                "python"
+            ],
+            "allowedVersions": "==3.12.*"
+        }
+    ],
+    "customManagers": [
+        {
+            "customType": "jsonata",
+            "fileFormat": "toml",
+            "managerFilePatterns": [
+                "**/pyproject.toml"
+            ],
+            "matchStrings": [
+                "tool.uv.{ \"depName\": \"uv\", \"currentValue\": $replace($string($.'required-version'), '\"', '') }"
+            ],
+            "datasourceTemplate": "github-releases",
+            "depNameTemplate": "astral-sh/uv",
+            "extractVersionTemplate": "^v?(?<version>.*)$"
+        }
+    ]
 }
