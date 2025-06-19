@@ -11,19 +11,19 @@
             "matchUpdateTypes": [
                 "patch"
             ],
-            "groupName": "Patch dependencies"
+            "groupName": "Patch updates"
         },
         {
             "matchUpdateTypes": [
                 "minor"
             ],
-            "groupName": "Minor dependencies"
+            "groupName": "Minor updates"
         },
         {
             "matchUpdateTypes": [
                 "major"
             ],
-            "groupName": "Major dependencies"
+            "groupName": "Major updates"
         },
         {
             "matchDepNames": [
