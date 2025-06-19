@@ -3,7 +3,7 @@
     "extends": [
         "config:recommended",
         ":automergePatch",
-        ":semanticCommits"
+        ":semanticCommitTypeAll(chore)"
     ],
     "packageRules": [
         {
