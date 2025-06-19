@@ -11,25 +11,19 @@
             "matchUpdateTypes": [
                 "patch"
             ],
-            "groupName": "Patch updates"
+            "groupName": "Patch"
         },
         {
             "matchUpdateTypes": [
                 "minor"
             ],
-            "groupName": "Minor updates"
+            "groupName": "Minor"
         },
         {
             "matchUpdateTypes": [
                 "major"
             ],
-            "groupName": "Major updates"
-        },
-        {
-            "matchDepNames": [
-                "python"
-            ],
-            "allowedVersions": "==3.12"
+            "groupName": "Major"
         }
     ],
     "customManagers": [
