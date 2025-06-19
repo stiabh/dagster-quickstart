@@ -24,6 +24,25 @@
                 "major"
             ],
             "groupName": "Major"
+        },
+        {
+            "matchManagers": [
+                "python-version"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "enabled": true
+        },
+        {
+            "matchManagers": [
+                "python-version"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "major"
+            ],
+            "enabled": false
         }
     ],
     "customManagers": [
