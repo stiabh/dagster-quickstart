@@ -10,3 +10,6 @@ Including linters and formatters with opinionated rules:
 ```sh
 uv sync
 ```
+
+## Renovate
+https://github.com/renovatebot/renovate/blob/main/docs/usage/getting-started/installing-onboarding.md
