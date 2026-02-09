@@ -9,8 +9,8 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pytest==8.4.1",
-    "sqlfluff==3.4.1",
+    "pytest==9.0.2",
+    "sqlfluff==4.0.4",
     "shandy-sqlfmt[jinjafmt]==0.26.0",
     "ruff==0.12.0",
     "dagster-webserver==1.10.20",
