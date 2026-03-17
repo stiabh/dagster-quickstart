@@ -447,31 +447,6 @@ wheels = [
 ]
 
 [[package]]
-name = "dagster-cookiecutter"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "dagster" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "dagster-dg-cli" },
-    { name = "dagster-webserver" },
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "dagster", specifier = "==1.12.19" }]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "dagster-dg-cli", specifier = "==1.12.19" },
-    { name = "dagster-webserver", specifier = "==1.12.19" },
-    { name = "pytest", specifier = "==9.0.2" },
-]
-
-[[package]]
 name = "dagster-dg-cli"
 version = "1.12.19"
 source = { registry = "https://pypi.org/simple" }
@@ -538,6 +513,31 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/7f/8f/ee47f5034140f465a6b8564dbbdc598d46fc48fc455372138829cfa8df01/dagster_pipes-1.12.19.tar.gz", hash = "sha256:4c71dd9105a3641d19a2f7cd6526e2ca381f71c8616410d2023028551450a138", size = 23397, upload-time = "2026-03-12T17:26:04.451Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/5b/1c/f3e64e984dd3a9d0a2f2cb78a3bba6d2a025d392c2d926b218bf2690fbf9/dagster_pipes-1.12.19-py3-none-any.whl", hash = "sha256:2aace16e33a41a23cdfc58a594116925e974c211378b59841a141c15da9295b2", size = 20538, upload-time = "2026-03-12T17:26:03.313Z" },
+]
+
+[[package]]
+name = "dagster-quickstart"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "dagster" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "dagster-dg-cli" },
+    { name = "dagster-webserver" },
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dagster", specifier = "==1.12.19" }]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "dagster-dg-cli", specifier = "==1.12.19" },
+    { name = "dagster-webserver", specifier = "==1.12.19" },
+    { name = "pytest", specifier = "==9.0.2" },
 ]
 
 [[package]]
