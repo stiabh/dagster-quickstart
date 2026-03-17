@@ -5,7 +5,7 @@ version = "0.1.0"
 dependencies = ["dagster==1.12.19"]
 
 [dependency-groups]
-dev = ["dagster-webserver==1.12.19", "dagster-dg-cli==1.12.19", "pytest==9.0.1"]
+dev = ["dagster-webserver==1.12.19", "dagster-dg-cli==1.12.19", "pytest==9.0.2"]
 
 [build-system]
 requires = ["hatchling"]
