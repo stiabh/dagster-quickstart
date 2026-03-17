@@ -1,11 +1,30 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "automerge": true,
   "packageRules": [
     {
-      "matchPackagePatterns": ["^dagster"],
+      "matchPackagePatterns": [
+        "^dagster"
+      ],
       "groupName": "dagster"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "jsonata",
+      "fileFormat": "toml",
+      "managerFilePatterns": [
+        "**/pyproject.toml"
+      ],
+      "matchStrings": [
+        "tool.uv.{ \"depName\": \"uv\", \"currentValue\": $replace($string($.'required-version'), '\"', '') }"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "astral-sh/uv",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     }
   ]
 }
