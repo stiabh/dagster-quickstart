@@ -2,10 +2,10 @@
 name = "dagster_quickstart"
 requires-python = ">=3.10,<3.15"
 version = "0.1.0"
-dependencies = ["dagster==1.12.19"]
+dependencies = ["dagster==1.12.20"]
 
 [dependency-groups]
-dev = ["dagster-webserver==1.12.19", "dagster-dg-cli==1.12.19", "pytest==9.0.2"]
+dev = ["dagster-webserver==1.12.20", "dagster-dg-cli==1.12.20", "pytest==9.0.2"]
 
 [build-system]
 requires = ["hatchling"]
